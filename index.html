@@ -48,9 +48,20 @@ th{width:30%;background:#faf8f3;color:var(--sub);font-weight:600}
 tr:last-child th,tr:last-child td{border-bottom:none}
 footer{background:#111;color:#bbb;text-align:center;padding:28px 20px;font-size:.8rem}
 @media(max-width:600px){nav{display:none}}
+/* ---- intro splash ---- */
+#intro{position:fixed;inset:0;z-index:100;background:#000 url("hero.jpg") center/cover no-repeat;display:flex;align-items:flex-end;justify-content:center;animation:introOut 1.4s ease 3s forwards}
+#intro::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,0) 45%)}
+#intro .in{position:relative;z-index:1;text-align:center;color:#fff;padding:0 20px 9vh;animation:introText 1.2s ease .3s both}
+#intro .in b{display:block;font-size:clamp(1.6rem,5vw,3rem);letter-spacing:.12em}
+#intro .in span{font-size:.9rem;opacity:.85;letter-spacing:.2em}
+@keyframes introOut{to{opacity:0;visibility:hidden}}
+@keyframes introText{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){#intro{animation:introOut .01s ease 0s forwards}}
+.hero .wrap{grid-template-columns:1fr}
 </style>
 </head>
 <body>
+<div id="intro" aria-hidden="true"><div class="in"><b>GARAGE UNION</b><span>USED BMW MINI SPECIALIST</span></div></div>
 <header>
   <div class="wrap">
     <a class="logo" href="#top">GARAGE <span>UNION</span></a>
@@ -69,23 +80,7 @@ footer{background:#111;color:#bbb;text-align:center;padding:28px 20px;font-size:
       <p>中古のBMW MINI専門店「ガレージ・ユニオン」。専門メカニックによる整備と、納得できるまでのご説明で、はじめての一台も安心です。</p>
       <a class="btn" href="#stock">在庫を見る</a>
     </div>
-    <svg class="hero-car" viewBox="0 0 520 260" role="img" aria-label="MINIのイラスト">
-      <ellipse cx="260" cy="228" rx="215" ry="12" fill="rgba(0,0,0,.28)"/>
-      <path d="M50 170 C50 140 62 128 92 122 L150 116 C172 78 208 58 262 58 C322 58 362 80 384 116 L436 124 C462 130 474 144 474 170 L474 196 L50 196 Z" fill="#d94b3d"/>
-      <path d="M168 118 C184 88 212 74 262 74 C312 74 342 90 358 118 Z" fill="#fff"/>
-      <path d="M180 116 C194 94 216 84 254 84 L254 116 Z M270 84 C304 84 328 96 342 116 L270 116 Z" fill="#9fc7d8"/>
-      <rect x="50" y="176" width="424" height="20" fill="#b93a2e"/>
-      <circle cx="122" cy="150" r="24" fill="#fff" stroke="#222" stroke-width="5"/>
-      <circle cx="122" cy="150" r="12" fill="#f4e7a8"/>
-      <circle cx="402" cy="150" r="24" fill="#fff" stroke="#222" stroke-width="5"/>
-      <circle cx="402" cy="150" r="12" fill="#f4e7a8"/>
-      <ellipse cx="262" cy="160" rx="62" ry="22" fill="#222"/>
-      <path d="M210 160 H314 M214 152 H310 M214 168 H310" stroke="#888" stroke-width="2"/>
-      <circle cx="122" cy="204" r="34" fill="#1b1b1b"/><circle cx="122" cy="204" r="18" fill="#c9ced2"/><circle cx="122" cy="204" r="6" fill="#555"/>
-      <circle cx="402" cy="204" r="34" fill="#1b1b1b"/><circle cx="402" cy="204" r="18" fill="#c9ced2"/><circle cx="402" cy="204" r="6" fill="#555"/>
-      <text x="262" y="112" font-size="0"> </text>
-    </svg>
-  </div>
+      </div>
 </div>
 
 <section id="stock">
